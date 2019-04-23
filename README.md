@@ -1,25 +1,9 @@
-# gol-cmd
-
-![](http://i.imgur.com/lPF8Gtd.gif)
+## 元コード
+Yasuhiro Matsumoto (a.k.a mattn)
+https://github.com/mattn/gol-cmd
 
 ## Usage
 
 ```
-gol
+eng
 ```
-
-NOTE) しらじらしく ls コマンドと間違えなさい。
-
-## Installation
-
-```
-$ go get github.com/mattn/gol-cmd/cmd/gol
-```
-
-## License
-
-MIT
-
-## Author
-
-Yasuhiro Matsumoto (a.k.a mattn)
