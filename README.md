@@ -13,7 +13,7 @@ https://github.com/mattn/gol-cmd
 VRアイドル「えのぐ」ロゴ  
 https://rbc-geino.com/newlogo/
 
-おてがるんず
+おてがるんず  
 https://www.youtube.com/watch?v=wkyIz3MMVvs&t=503
 
 AA作成サイト  
