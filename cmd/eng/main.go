@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io"
 	"os"
@@ -10,13 +11,24 @@ import (
 
 var out io.Writer = os.Stdout
 var enoguAA = loadAA("data/enogu_logo_AA.txt")
+var anzAA = loadAA("data/anzu_AA.txt")
+
+var (
+	anz = flag.Bool("anz", false, "draw anzu")
+)
 
 func main() {
-	printLogoAA()
+	flag.Parse()
+	fmt.Fprintln(out, "\x1b[2J")
+	switch {
+	case *anz:
+		printAnzAA()
+	default:
+		printLogoAA()
+	}
 }
 
 func printLogoAA() {
-	fmt.Fprintln(out, "\x1b[2J")
 	for i := 50; i > 0; i-- {
 		for j, line := range strings.Split(enoguAA, "\r\n") {
 			fmt.Fprintf(out, "\x1b[%d;%dH\x1bK", j+5, i)
@@ -50,7 +62,18 @@ func printLogoAA() {
 			}
 			fmt.Println(" ")
 		}
-		time.Sleep(50 * time.Millisecond)
+		time.Sleep(25 * time.Millisecond)
+	}
+}
+
+func printAnzAA() {
+	for i := 50; i > 0; i-- {
+		for j, line := range strings.Split(anzAA, "\r\n") {
+			fmt.Fprintf(out, "\x1b[%d;%dH\x1bK", j+5, i)
+			//fmt.Fprintf(out, "\x1b[%dm%s ", 36, line)
+			fmt.Println(line, " ")
+		}
+		time.Sleep(25 * time.Millisecond)
 	}
 }
 
